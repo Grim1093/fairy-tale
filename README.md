@@ -29,18 +29,31 @@ A decentralized application (dApp) to register intellectual property (IP) on-cha
 ## 📦 Project Structure (High-Level)
 
 story/
+
 ├── backend/                  # Node.js / Express.js backend for API interactions
+
 │   └── src/                  # Backend source code (e.g., server.ts/js, API routes, story)
+
 ├── frontend/ip-scanner/      # React frontend application
+
 │   ├── public/               # Static assets (e.g., index.html, shield-icon.svg)
+
 │   ├── src/
+
 │   │   ├── components/       # Reusable React components (AssetRegistrationForm, ConnectWallet, Discover, WalletInfo)
+
 │   │   ├── services/         # API interaction logic (e.g., fetchStatus, API for registration)
+
 │   │   ├── utils/            # Utility functions (e.g., shortenAddress)
+
 │   │   ├── App.tsx           # Main application component and routing
+
 │   │   └── App.css           # Global application styles
+
 │   └── ...                   # Other frontend files (package.json, tsconfig.json, etc.)
+
 └── README.md                 # This file## ⚙️ Setup and Installation
+
 
 
 
