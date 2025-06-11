@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@api/yakoa-ip-api": "file:.api/apis/yakoa-ip-api",
+    "@story-protocol/core-sdk": "^1.3.1",
+    "@tanstack/react-query": "^5.80.6",
+    "@tomo-inc/tomo-evm-kit": "^0.0.45",
+    "axios": "^1.9.0",
+    "dotenv": "^16.5.0",
+    "form-data": "^4.0.2",
+    "viem": "^2.30.6",
+    "wagmi": "^2.15.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "@types/form-data": "^2.2.1",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8"
+  }
+}

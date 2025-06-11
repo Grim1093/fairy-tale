@@ -1,0 +1,269 @@
+/* frontend/ip-scanner/src/components/AssetRegistrationForm.css */
+
+body {
+  /* This body style should ideally be handled by App.css to avoid conflicts */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #282c34; /* Darker background from App.css */
+  color: #e0e0e0; /* Light text from App.css */
+  line-height: 1.6;
+}
+
+.asset-form-wrapper { /* New wrapper for form and particles */
+  position: relative; /* Crucial for positioning particles absolutely within it */
+  overflow: hidden; /* Hide particles outside this container */
+  padding: 20px; /* Adjust padding as needed */
+  display: flex; /* Make it a flex container */
+  justify-content: center; /* Center the form horizontally */
+  align-items: center; /* Center the form vertically (if it's not full height) */
+  min-height: calc(100vh - 100px); /* Adjust to fit below nav, if nav height is around 100px */
+  box-sizing: border-box;
+  margin-top: 20px; /* Adjust this value as needed for desired spacing */
+}
+
+.form-particles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Send it behind the form */
+}
+
+form {
+  background-color: #3b4252; /* Lighter dark background for form, matching component-section */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Darker shadow for dark theme */
+  color: #e0e0e0; /* Ensure form text is light and readable */
+  position: relative; /* Ensure form content is above particles */
+  z-index: 1; /* Bring form to front */
+  max-width: 600px; /* Keep form width constrained */
+  width: 100%; /* Ensure it takes full width within max-width */
+  box-sizing: border-box;
+
+  /* --- Flexbox for centering content inside form --- */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+}
+
+/* Ensure common form children (inputs, textareas, etc.) take full width
+   when form is a flex container with align-items: center */
+form > input[type="text"],
+form > textarea,
+form > button:not(.form-remove-button):not(.form-add-button):not(.form-submit-button),
+form > .form-add-button, /* Target specific add/submit buttons */
+form > .form-submit-button,
+form > .form-loading-message, /* For the loading message */
+form > .confirmation-message,
+form > .error-message {
+    width: 100%; /* Make them stretch to full width of the form's content area */
+    box-sizing: border-box; /* Include padding in width */
+    /* Remove redundant display: block; from input/textarea if this applies */
+    display: block; /* Ensure they remain block-level and stack */
+}
+
+
+.form-logo {
+    width: 60px; /* Smaller size for within the form */
+    height: 60px;
+    margin-bottom: 15px; /* Space between logo and first heading (adjusted from 20px) */
+    filter: drop-shadow(0 0 10px rgba(122, 184, 255, 0.4)); /* Subtle glow effect */
+}
+
+h2, h3 {
+  color: #7ab8ff; /* Gentle blue for headings, from App.css */
+  margin-bottom: 20px; /* Keep margin-bottom for default spacing below h2/h3 */
+  border-bottom: 1px solid #4a4f5c; /* Darker, subtle border */
+  padding-bottom: 10px; /* Padding for border */
+  width: 100%; /* Ensure headings take full width when parent is flex */
+  text-align: center; /* Center the heading text */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* --- NEW: Styling for Creator/Attribute Rows --- */
+.form-row {
+  display: flex; /* Make it a flex row */
+  align-items: center; /* Align items vertically */
+  gap: 10px; /* Space between inputs and button */
+  width: 100%; /* Ensure row takes full width of the form's content area */
+  margin-bottom: 15px; /* Space between rows */
+  box-sizing: border-box;
+}
+
+.form-row input {
+  flex-grow: 1; /* Allow inputs to take up available space */
+  /* Remove width: calc(100% - 22px); from inputs when they are inside flex-grow:1 parent,
+     as flex-grow:1 handles the width distribution */
+  padding: 12px;
+  border: 1px solid #4a4f5c;
+  border-radius: 6px;
+  background-color: #2d313d;
+  color: #e0e0e0;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-row input:focus {
+  border-color: #7ab8ff;
+  box-shadow: 0 0 8px rgba(122, 184, 255, 0.3);
+  outline: none;
+}
+
+
+/* General button styling */
+button {
+  background-color: #5b7bb2; /* Calming blue for buttons */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* margin-right: 10px; */ /* Removed from general button to avoid affecting single buttons/last buttons */
+}
+
+button:hover {
+  background-color: #4a7c9f; /* Darker blue on hover */
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #6a7c93; /* Muted blue when disabled */
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Specific styling for add/submit buttons */
+.form-add-button,
+.form-submit-button {
+    margin-top: 10px; /* Space above these buttons */
+    /* If you want them to be full width, ensure it's explicitly set by the form > button rule above */
+}
+
+
+/* --- NEW: Styling for Remove Button --- */
+.text-red-500.form-remove-button { /* Target specifically the remove button within a row */
+  color: #ffcdd2; /* Lighter red for remove text, to stand out on dark background */
+  background: none;
+  padding: 8px 15px;
+  border: 1px solid #e74c3c; /* Original red border for emphasis */
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  flex-shrink: 0; /* CRUCIAL: Prevent button from shrinking */
+  white-space: nowrap; /* Prevent "Remove Creator" text from wrapping */
+}
+
+.text-red-500.form-remove-button:hover:not(:disabled) {
+  background-color: #e74c3c; /* Original red on hover */
+  color: white;
+}
+
+.text-red-500.form-remove-button:disabled {
+  color: #6a7c93; /* Blend with disabled button color */
+  border-color: #6a7c93;
+  cursor: not-allowed;
+}
+
+/* Remove original text-red-500 rule if it's no longer used for generic buttons
+   or adjust it to only apply to non-form-remove-button contexts. */
+/*
+.text-red-500 {
+  color: #ffcdd2;
+  background: none;
+  padding: 8px 15px;
+  border: 1px solid #e74c3c;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.text-red-500:hover:not(:disabled) {
+  background-color: #e74c3c;
+  color: white;
+}
+.text-red-500:disabled {
+  color: #6a7c93;
+  border-color: #6a7c93;
+  cursor: not-allowed;
+}
+*/
+
+/* General styling for common elements inside form */
+input[type="text"],
+textarea {
+  /* width: calc(100% - 22px); This is handled by flex-grow: 1 or 100% width on form children */
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #2d313d;
+  color: #e0e0e0;
+  border: 1px solid #4a4f5c;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #7ab8ff;
+  box-shadow: 0 0 8px rgba(122, 184, 255, 0.3);
+  outline: none;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Confirmation and Error Messages */
+.confirmation-message,
+.error-message {
+  padding: 18px;
+  border-radius: 8px;
+  margin-top: 25px;
+  font-size: 15px;
+  line-height: 1.5;
+  width: 100%; /* Ensure messages take full width */
+  box-sizing: border-box;
+}
+
+.confirmation-message {
+  background-color: #3b5e4d;
+  border: 1px solid #4CAF50;
+  color: #c8e6c9;
+}
+
+.error-message {
+  background-color: #7c4c4c;
+  border: 1px solid #f44336;
+  color: #ffcdd2;
+}
+
+div[style*="background-color: #e6ffed"] h3,
+div[style*="background-color: #ffe6e6"] h3 {
+  color: inherit;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+div[style*="background-color: #e6ffed"] a,
+div[style*="background-color: #ffe6e6"] a {
+  color: #a0d9ff;
+  text-decoration: none;
+}
+
+div[style*="background-color: #e6ffed"] a:hover,
+div[style*="background-color: #ffe6e6"] a:hover {
+  text-decoration: underline;
+}
+
+p[style*="color: blue"], /* Original loading message target */
+.form-loading-message { /* New class for loading message */
+  color: #a0d9ff !important;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}

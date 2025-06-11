@@ -1,0 +1,158 @@
+/* frontend/ip-scanner/src/components/Discover.css */
+
+.discover-wrapper {
+  position: relative; /* Crucial for positioning particles absolutely within it */
+  overflow: hidden; /* Hide particles outside this container */
+  padding: 20px; /* Adjust padding as needed */
+  display: flex; /* Make it a flex container */
+  justify-content: center; /* Center the content horizontally */
+  align-items: flex-start; /* Align content to the top (or center if you prefer) */
+  min-height: calc(100vh - 100px); /* Adjust to fit below nav, if nav height is around 100px */
+  box-sizing: border-box; /* Include padding in height */
+}
+
+.discover-particles-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Send it behind the content */
+}
+
+.discover-content {
+  position: relative; /* Ensure content is above particles */
+  z-index: 1; /* Bring content to front */
+  max-width: 800px; /* Max width for readability */
+  width: 100%; /* Take full width within max-width */
+  margin-top: 20px; /* Space from top of wrapper if using flex-start */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #7ab8ff; /* A gentle blue for headings */
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.search-section {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  background-color: #3b4252; /* Lighter dark background for search bar */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  align-items: center; /* Align input and button vertically */
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid #4a4f5c; /* Darker border */
+  border-radius: 6px;
+  background-color: #2d313d; /* Darker input background */
+  color: #e0e0e0; /* Light text */
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #aebfd0; /* Muted placeholder color */
+}
+
+.search-input:focus {
+  border-color: #7ab8ff;
+  box-shadow: 0 0 8px rgba(122, 184, 255, 0.3);
+  outline: none;
+}
+
+.search-button {
+  background-color: #5b7bb2; /* Calming blue for buttons */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.search-button:hover {
+  background-color: #4a6fa5; /* Darker blue on hover */
+  transform: translateY(-2px);
+}
+
+.search-button:disabled {
+  background-color: #6a7c93; /* Muted color when disabled */
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-message {
+  background-color: #7c4c4c; /* Darker red for error, from App.css */
+  border: 1px solid #f44336; /* Red border for error, from App.css */
+  color: #ffcdd2; /* Lighter red text for error, from App.css */
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.asset-details-card {
+  background-color: #3b4252; /* Lighter dark background for card */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 25px;
+  color: #e0e0e0; /* Light text for readability */
+  line-height: 1.8;
+  border: 1px solid #4a4f5c; /* Subtle border */
+}
+
+.asset-details-card strong {
+  color: #a0d9ff; /* Muted blue for labels */
+}
+
+.details-link {
+  color: #a0d9ff; /* Consistent link color */
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 8px; /* Space between links */
+  display: inline-block; /* Allows margin-top on links */
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.details-link:hover {
+  color: #7ab8ff; /* Brighter blue on hover */
+  text-decoration: underline;
+}
+
+/* Common color definitions from App.css for consistency */
+/* You might want to remove this if App.css is globally loaded and not conflicting */
+/*
+:root {
+  --primary-blue: #7ab8ff;
+  --secondary-blue: #a0d9ff;
+  --dark-bg: #282c34;
+  --darker-bg: #1a1a2e;
+  --light-text: #e0e0e0;
+  --input-bg: #2d313d;
+  --input-border: #4a4f5c;
+  --button-blue: #5b7bb2;
+  --button-hover: #4a6fa5;
+  --button-disabled: #6a7c93;
+  --success-bg: #3b5e4d;
+  --success-border: #4CAF50;
+  --success-text: #c8e6c9;
+  --error-bg: #7c4c4c;
+  --error-border: #f44336;
+  --error-text: #ffcdd2;
+}
+*/

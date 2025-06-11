@@ -1,0 +1,59 @@
+{
+  "name": "ip-scanner",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tanstack/react-query": "^5.80.6",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@tomo-inc/tomo-evm-kit": "^0.0.45",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.126",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.6",
+    "@types/react-router-dom": "^5.3.3",
+    "ajv": "^7.2.4",
+    "dotenv": "^16.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.2",
+    "react-scripts": "5.0.1",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles-engine": "^2.12.0",
+    "tsparticles-slim": "^2.12.0",
+    "viem": "^2.30.6",
+    "wagmi": "^2.15.6",
+    "web-vitals": "^2.1.4",
+    "web3.storage": "^4.5.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "proxy": "http://localhost:5000"
+}
