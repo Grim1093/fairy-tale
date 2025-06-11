@@ -42,8 +42,26 @@ story/
 │   └── ...                   # Other frontend files (package.json, tsconfig.json, etc.)
 └── README.md                 # This file## ⚙️ Setup and Installation
 
-Follow these steps to get the project up and running on your local machine.
 
+
+## 🚀 Technologies Used
+**Frontend:**
+* **React:** A JavaScript library for building user interfaces.
+* **TypeScript:** A superset of JavaScript that adds static typing.
+* **Wagmi:** A collection of React Hooks for Ethereum.
+* **RainbowKit / TomoEVMKit:** A comprehensive wallet connection library for dApps, providing a beautiful and easy-to-use modal for connecting various wallets.
+* **`react-tsparticles`:** A lightweight library for creating customizable particle animations in React.
+* **React Router DOM:** For declarative routing in the React application.
+* **CSS Modules / Global CSS:** For styling the components and maintaining a consistent theme.
+
+**Backend:**
+* **Node.js / Express.js (Assumed):** For handling API requests (e.g., `/api/register`, `/api/status`).
+* **Story Protocol SDK / APIs:** Interacting with the Story Protocol blockchain for IP registration and data retrieval.
+* **`viem`:** A TypeScript interface for Ethereum, likely used for blockchain interactions on the backend.
+
+## ⚙️ Setup and Installation
+
+Follow these steps to get the project up and running on your local machine.
 ### Prerequisites
 
 * Node.js (v18.x or higher recommended)
