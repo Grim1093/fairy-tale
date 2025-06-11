@@ -1,7 +1,6 @@
 # 🛡️ Decentralized IP Scanner
 
-A decentralized application (dApp) to register intellectual property (IP) on-chain, detect potential infringement, and verify ownership using **Story Protocol** and **Yakoa's API**. The interface also supports monetization through Zapper and Crossmint integrations.
-
+A decentralized application (dApp) to register intellectual property (IP) on-chain, detect potential infringement, and verify ownership using **Story Protocol** and **Yakoa's API**.
 ---
 
 ## 🚀 Features
