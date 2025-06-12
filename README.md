@@ -129,8 +129,8 @@ This will usually open the application in your browser at http://localhost:3000.
 Start the Backend
 ```Bash
 
-cd ../../backend # Navigate back to backend directory
-npm start # or yarn start (or a specific command like `node src/server.js` if not configured in package.json)
+cd ../../backend/src # Navigate back to backend directory
+npm dev:backend 
 ```
 
 
